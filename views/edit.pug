@@ -1,0 +1,10 @@
+extends layout
+block content
+  h1= title
+  form(method='POST', action='/edit/' + todo.id)
+    label(for='task') Task:
+    input(type='text', name='task', id='task', value=todo.task, required)
+    label(for='completed') Completed:
+    input(type='checkbox', name='completed', id='completed', checked=(todo.completed > 0))
+    button(type='submit') Save Changes
+  a(href='/') Cancel
