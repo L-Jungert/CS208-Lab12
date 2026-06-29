@@ -1,8 +1,129 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  max-width: 640px;
+  margin: 40px auto;
+  padding: 0 20px;
+  background: #f4f6f8;
+  color: #2c3e50;
+  line-height: 1.5;
 }
 
+h1 {
+  text-align: center;
+  color: #34495e;
+  margin-bottom: 4px;
+}
+
+h2 {
+  color: #34495e;
+  font-size: 20px;
+}
+
+p {
+  text-align: center;
+  color: #7f8c8d;
+  margin-top: 0;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid #dfe4ea;
+  margin: 28px 0;
+}
+
+/* Task list */
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+ol li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #fff;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* The "task - status" text takes up remaining space,
+   pushing the Edit link and Delete button to the right */
+ol li > span:first-child {
+  flex: 1;
+  font-weight: 500;
+}
+
+/* Links (Edit) and buttons share a pill style */
 a {
-  color: #00B7FF;
+  text-decoration: none;
+  color: #fff;
+  background: #f39c12;
+  padding: 7px 14px;
+  border-radius: 6px;
+  font-size: 14px;
+  display: inline-block;
+}
+
+a:hover {
+  opacity: 0.85;
+}
+
+button {
+  border: none;
+  border-radius: 6px;
+  padding: 7px 14px;
+  font-size: 14px;
+  color: #fff;
+  background: #3498db;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+/* Delete buttons (the ones inside list items) get a red color */
+ol li form button {
+  background: #e74c3c;
+}
+
+/* Inline delete form shouldn't break the row layout */
+ol li form {
+  display: inline;
+  margin: 0;
+}
+
+/* Add-task and edit forms */
+form {
+  margin: 12px 0;
+}
+
+label {
+  display: inline-block;
+  margin-right: 8px;
+  font-weight: 600;
+  color: #34495e;
+}
+
+input[type='text'] {
+  padding: 9px 12px;
+  border: 1px solid #cbd5e0;
+  border-radius: 6px;
+  font-size: 15px;
+  margin-right: 8px;
+  min-width: 240px;
+}
+
+input[type='checkbox'] {
+  margin-right: 16px;
+  transform: scale(1.2);
+}
+
+/* Cancel link on the edit page — override the orange to gray.
+   It's the only top-level <a> that points home. */
+a[href='/'] {
+  background: #95a5a6;
 }
